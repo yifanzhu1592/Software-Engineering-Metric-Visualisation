@@ -44,7 +44,7 @@ pie_chart.title = f"Most used languages by {user.login}"
 for language in languages:
     pie_chart.add(language, languages[language])
 pie_chart.render_in_browser()
-pie_chart.render_to_file("Most_used_languages.png")
+pie_chart.render_to_file("Most_used_languages.svg")
 
 tree_map = pygal.Treemap(config)
 tree_map.title = f"{user.login}'s most starred repositories"
@@ -52,7 +52,7 @@ for repo in repositories:
     tree_map.add(repo.name, repo.stargazers_count)
 tree_map.render
 tree_map.render_in_browser()
-tree_map.render_to_file("Most_starred_repositories.png")
+tree_map.render_to_file("Most_starred_repositories.svg")
 
 bar_chart = pygal.Bar(config)
 bar_chart.title = f"{user.login}'s repositories created in each month"
@@ -60,4 +60,4 @@ bar_chart.x_labels = months_names
 bar_chart.add('', months)
 bar_chart.render
 bar_chart.render_in_browser()
-bar_chart.render_to_file("Repositories_created_in_each_month.png")
+bar_chart.render_to_file("Repositories_created_in_each_month.svg")
